@@ -4,12 +4,16 @@ import * as fromArray from './array';
 import * as fromStack from './stack';
 import * as fromQueue from './queue';
 
-const kayak = 'kayak';
-const level = 'level';
-const wasit = 'Was it a car or a cat i saw';
-const pet = 'Step on no pets';
+// syntax for importing default export
+import LinkedList from './linkedLists';
 
-log(`'${kayak}' is a palindrome, ${fromQueue.isPalindrome(kayak)}`);
-log(`'${level}' is a palindrome, ${fromQueue.isPalindrome(level)}`);
-log(`'${wasit}' is a palindrome, ${fromQueue.isPalindrome(wasit)}`);
-log(`'${pet}' is a palindrome, ${fromQueue.isPalindrome(pet)}`);
+const linkedList = new LinkedList();
+
+// test adding at the end
+linkedList.push('Dilip');
+linkedList.push('Mulicha');
+linkedList.push('Sunuwar');
+linkedList.insert('Thea', 3);
+
+// test removing element by index
+log(linkedList.toString());
