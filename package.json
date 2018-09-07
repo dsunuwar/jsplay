@@ -1,0 +1,21 @@
+{
+    "name": "jsplay",
+    "version": "1.0.0",
+    "description": "practice & explore js",
+    "main": "index.js",
+    "scripts": {
+        "start": "webpack-dev-server",
+        "test": "test"
+    },
+    "author": "dsunuwar",
+    "license": "ISC",
+    "dependencies": {
+        "awesome-typescript-loader": "^5.2.0",
+        "typescript": "^3.0.1",
+        "webpack": "^4.17.1",
+        "webpack-dev-server": "^3.1.6"
+    },
+    "devDependencies": {
+        "webpack-cli": "^3.1.0"
+    }
+}
