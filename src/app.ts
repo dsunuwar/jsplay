@@ -3,17 +3,17 @@ import * as fib from './fibonacci';
 import * as fromArray from './array';
 import * as fromStack from './stack';
 import * as fromQueue from './queue';
+import * as list from './linkedLists';
+import * as fromSet from './set';
 
-// syntax for importing default export
-import LinkedList from './linkedLists';
+// const doublyLinkedList = new list.DoublyLinkedList();
+// doublyLinkedList.insert('Dilip', 0);
+// doublyLinkedList.insert('Sunuwar', 1);
+// log(doublyLinkedList);
 
-const linkedList = new LinkedList();
-
-// test adding at the end
-linkedList.push('Dilip');
-linkedList.push('Mulicha');
-linkedList.push('Sunuwar');
-linkedList.insert('Thea', 3);
-
-// test removing element by index
-log(linkedList.toString());
+let set = new fromSet.Set();
+log(set);
+log(set.add(1));
+log(set.add(2));
+log(set.add(3));
+log(set.add(4));
