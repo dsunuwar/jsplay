@@ -136,3 +136,21 @@ export class ValuePair {
  * However, because JavaScript is not strongly typed, we cannot gurantee the key will be a string.
  * For this reason, we need to use a toStrFn.
  */
+
+/**
+  * TEST:
+const map = new fromDictionary.Dictionary();
+map.set('dilip', 'dilip@email.com');
+map.set('John', 'john@gmail.com');
+map.set('Thea', 'thea@me.com');
+
+// test forEach by passing in custom callback
+log(
+	map.forEach((key, value) => {
+		console.log(`key: ${key}, value: ${value}`);
+		//note:  return false to exit the looping
+	})
+);
+
+log(map.toString());
+*/
