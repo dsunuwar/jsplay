@@ -6,3 +6,4 @@ import * as fromQueue from './queue';
 import * as list from './linkedLists';
 import * as fromSet from './set';
 import * as fromDictionary from './dictionaries';
+import * as fromHash from './hashTable';
