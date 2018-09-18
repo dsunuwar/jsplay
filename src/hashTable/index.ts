@@ -1,4 +1,7 @@
 export * from './hashTable';
+export * from './separateChaining';
+export * from './loseloseHashFunction';
+export * from './linearProbing';
 
 /**
  * HashTabe is also known as HashMap.
@@ -11,10 +14,4 @@ export * from './hashTable';
  * Hash use cases: it can be used as associative array, since it is an implementation of
  * dictionary. It can also be used to index a database to allow for faster searching of
  * the record key. In JavaScript hash table internally used to represent each object.
- */
-
-/**
- * Hash function:
- * "lose-lose hash" function is the most common one. itsimply sums up the ASCII values
- * of each character of the key length.
  */
