@@ -1,12 +1,22 @@
 import { defaultToString } from '../utils';
-import { ValuePair } from '../dictionaries';
+import ValuePair from '../dictionaries';
+import loseloseHash from './loseloseHashFunction';
+import { djb2HashCode } from './djb2HashFunction';
 
 export class HashTable {
-	toStrFn;
+	private toStrFn;
 	table;
 	constructor(toStrFn = defaultToString) {
 		this.toStrFn = toStrFn;
 		this.table = {};
+	}
+
+	protected hashCode(key) {
+		// better hash function than loselose, no collisions!
+		return djb2HashCode(key, this.toStrFn);
+
+		// creates collision and handles collision
+		return loseloseHash(key, this.toStrFn);
 	}
 
 	// add new item or update if exist
@@ -39,28 +49,13 @@ export class HashTable {
 		return valuePair ? valuePair.value : undefined;
 	}
 
-	hashCode(key) {
-		return this.loseloseHash(key);
-	}
-
-	private loseloseHash(key) {
-		if (typeof key === 'number') return key;
-
-		let sum = 0;
-		const tableKey = this.toStrFn(key);
-		for (let i = 0; i < tableKey.length; i++) {
-			sum += tableKey.charCodeAt(i);
+	hashToString() {
+		const tableKeys = Object.keys(this.table);
+		let objString = `{${tableKeys[0]}: ${this.table[tableKeys[0]].toString()}}`;
+		for (let i = 1; i < tableKeys.length; i++) {
+			objString = `${objString},{${tableKeys[i]}: ${this.table[tableKeys[i]].toString()}}`;
 		}
-		return sum % 37; // ASCII of 37 is %
-
-		/**
-		 * Note: the sum could be too big number that do not fit in a numeric variable.
-		 * To avoid this situation, we can divide the sum with an arbitary number and
-		 * use the remainder as key. This will avoid risking working with very big numbers.
-         
-         * ASCII Table:
-         * http://www.asciitable.com/
-		 */
+		return objString;
 	}
 }
 
