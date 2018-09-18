@@ -26,3 +26,8 @@ export function djb2HashCode(key, toStrFn) {
  * lesser collisions.
  *
  */
+
+/**
+ * More techniques to create hash functions for numeric keys:
+ * http://web.archive.org/web/20071223173210/http://www.concentric.net/~Ttwang/tech/inthash.htm
+ */

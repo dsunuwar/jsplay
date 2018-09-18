@@ -23,3 +23,8 @@ export default function loseloseHash(key: string, toStrFn) {
          * http://www.asciitable.com/
 		 */
 }
+
+/**
+ * More techniques to create hash functions for numeric keys:
+ * http://web.archive.org/web/20071223173210/http://www.concentric.net/~Ttwang/tech/inthash.htm
+ */
