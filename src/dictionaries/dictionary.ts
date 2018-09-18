@@ -1,4 +1,5 @@
 import { defaultToString } from '../utils';
+import ValuePair from './valuePair';
 export class Dictionary {
 	toStrFn;
 	table;
@@ -113,20 +114,6 @@ export class Dictionary {
 			objString = `${objString}, ${valuePairs[i].toString()}`;
 		}
 		return objString;
-	}
-}
-
-export class ValuePair {
-	key;
-	value;
-
-	constructor(key, value) {
-		this.key = key;
-		this.value = value;
-	}
-
-	toString() {
-		return `[#${this.key}: ${this.value}]`;
 	}
 }
 

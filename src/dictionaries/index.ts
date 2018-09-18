@@ -1,4 +1,5 @@
 export * from './dictionary';
+export { default } from './valuePair';
 /**
  * DICTIONARY (other names are map, symbol table, associative array):
  * Stores values in pairs as [key, value].
